@@ -191,6 +191,7 @@ Create `menu/templates/menu/` folder. We'll have three templates: `home.html`, `
 Create `menu/static/menu/` and add CSS files, e.g., `style.css`. Link in `base.html`:
 
 ```django
+{% load static %}
 <link rel="stylesheet" href="{% static 'menu/style.css' %}">
 ```
 
