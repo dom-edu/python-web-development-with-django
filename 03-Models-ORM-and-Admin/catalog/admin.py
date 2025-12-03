@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Genre, Book
+from .models import Author, Genre, Book, Reading
 
 # Register your models here.
 
@@ -22,3 +22,9 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ("title", "author", "publication_year", "isbn")
     list_filter = ("publication_year", "genre")
     search_fields = ("title", "author__last_name", "isbn")
+
+
+@admin.register(Reading)
+class ReadingAdmin(admin.ModelAdmin):
+     list_display = ("date", "location", "reader", "author", "book")
+     search_fields = ("location", "date", "author")

@@ -48,3 +48,32 @@ class Book(models.Model):
 
     def __str__(self):
         return f"{self.title} ({self.publication_year})"
+
+# we will make a new model hear called Readings 
+class Reading(models.Model):
+    """
+    Model for representing performed readings of the book
+    """
+    date = models.DateField()
+    location = models.CharField(max_length=200)
+    reader = models.CharField(max_length=200)
+
+    # use ForeignKey to Model Many to One 
+    book = models.ForeignKey(
+        Book, 
+        on_delete=models.CASCADE,
+        related_name="readings" # i.e. book.readings.all()
+    )
+    author = models.ForeignKey(
+        Author, 
+        on_delete=models.CASCADE,
+        related_name="readings"
+    )
+    
+    # add ordering 
+    class Meta:
+        ordering = ['-date'] 
+    
+    # string representation of a reading
+    def __str__(self):
+        return f"{self.book.title} reading on {self.date} at {self.location}"
