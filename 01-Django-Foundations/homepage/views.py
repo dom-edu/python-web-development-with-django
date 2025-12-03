@@ -9,7 +9,9 @@ from django.shortcuts import render
 def home(request):
     context = {
         'page_title': 'Home',
-        'intro': 'Welcome to my portfolio! Here are some selected projects.'
+        'intro': 'Welcome to my portfolio! Here are some selected projects.',
+        'name': 'Dom',
+        'interests': ['computers','films']
     }
     return render(request, 'homepage/home.html', context)
 
