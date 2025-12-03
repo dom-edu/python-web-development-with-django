@@ -17,3 +17,12 @@ ls -la
 ```
 pip freeze
 ```
+
+## save installed config of vm to requirements.txt 
+```
+pip freeze > requirements.txt
+```
+
+## install from requirements file 
+```
+pip install -r requirements.txt
