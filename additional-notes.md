@@ -55,7 +55,7 @@ pip freeze > requirements.txt
 ## install from requirements file 
 ```
 pip install -r requirements.txt
-
+```
 ## showing current working directory path
 ```
 pwd  
