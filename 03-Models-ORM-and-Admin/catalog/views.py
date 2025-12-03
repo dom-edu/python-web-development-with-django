@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book
+from .models import Book, Reading
 
 # Create your views here.
 def home(request):
@@ -12,3 +12,8 @@ def home(request):
 def book_list(request):
     books = Book.objects.select_related('author').prefetch_related('genre').all()
     return render(request, 'catalog/book_list.html', {'books': books})
+
+def readings_list(request):
+    readings = Reading.objects.all()
+    
+    return render(request, 'catalog/readings_list.html', {'readings': readings})

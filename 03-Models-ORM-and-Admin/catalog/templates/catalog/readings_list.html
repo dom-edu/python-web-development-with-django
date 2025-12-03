@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ page_title }}</h1>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Readings List</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 2rem; background: #f5f5f5; }
+            h1 { color: #2c3e50; }
+            table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; }
+            th, td { padding: 0.5rem 1rem; border-bottom: 1px solid #ddd; }
+            th { background: #ecf0f1; text-align: left; }
+        </style>
+    </head>
+
+    <h1>📖 Readings</h1>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Reader</th>
+                    <th>Author</th>
+                    <th>Book</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rd in readings %}
+                    <tr>
+                        <td>{{ rd.date }}</td>
+                        <td>{{ rd.location }} </td>
+                        <td>{{ rd.reader }}</td>
+                        <td>{{ rd.author }}</td>
+                        <td>{{ rd.book }}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="5">No Readings in Database</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html> 
+
+{% endblock %}
+
+{% comment %} <!DOCTYPE html>
+{% endcomment %}
