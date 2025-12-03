@@ -2,6 +2,8 @@
 
 Curriculum content for Noble Desktop's Python/Django for Web Development coursework. 
 
+This is a change for demo purposes 
+
 ## TUTORIAL PROJECTS AND ASSOCIATED CONCEPTS
 
 1. **Introduction to Django Basics: [Personal Portfolio](./01-Django-Foundations/)**
