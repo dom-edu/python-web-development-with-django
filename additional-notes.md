@@ -4,7 +4,7 @@
 
 virtual environment - is a sandbox , everything installed there does not affect system wide libraries 
 
-OOP Overview
+## OOP Overview
 ```
 class Student(object):
 
@@ -32,6 +32,27 @@ student2 = Student("Tom", "30")
 print(student1)
 print(student2)
 ```
+## Generic Views For Modularization  
+```
+from django.http import HttpResponse
+from django.views import View # base view 
+
+
+# we want the greetings view to always return a get request
+class GreetingView(View):
+    greeting = "Good Day"
+
+    def get(self, request):
+        return HttpResponse(self.greeting)
+
+# You can override that in a subclass:
+
+# easily update it for overriding GreetingView's greeting
+class MorningGreetingView(GreetingView):
+    greeting = "Morning to ya"
+```
+
+
 
 
 
