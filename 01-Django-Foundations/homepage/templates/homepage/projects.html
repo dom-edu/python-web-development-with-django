@@ -1,0 +1,15 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+<h1>{{ page_title }}</h1>
+<ul>
+    {% for project in projects %}
+        <li>
+            <strong>{{ project.name }}</strong> — <em>{{ project.tech }}</em><br>
+            {{ project.desc }}
+        </li>
+    {% empty %}
+        <li>No projects yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
