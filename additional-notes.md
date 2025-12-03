@@ -56,4 +56,10 @@ pip freeze > requirements.txt
 ```
 pip install -r requirements.txt
 
+## showing current working directory path
+```
+pwd  
+i.e /Users/n/Documents/GitHub/python-web-development-with-django/03-Models-ORM-and-Admin
+```
+
 
