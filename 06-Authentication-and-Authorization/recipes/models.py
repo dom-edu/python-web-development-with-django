@@ -24,7 +24,10 @@ class Chef(models.Model):
 
     def __str__(self):
         return self.user.get_full_name() or self.user.username
-    
+
+# djangos way of doing async callback functions 
+# don't hold up the app while creating a new user, 
+# when creation has been completed successfully, add their name to the database. 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

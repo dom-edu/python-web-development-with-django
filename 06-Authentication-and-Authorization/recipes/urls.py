@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path 
+
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path("", views.recipe_list, name="recipe_list"),
@@ -10,4 +12,8 @@ urlpatterns = [
     path("my-recipes/", views.my_recipes, name="my_recipes"),
     path("stats/", views.stats_dashboard, name="recipes_stats"),
     path("signup/", views.signup_view, name="signup"),
+    
+    # adding password reset 
+    path("password_reset", auth_views.PasswordResetView.as_view(), name="password_reset"),
+    path("password_reset/done", auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
 ]

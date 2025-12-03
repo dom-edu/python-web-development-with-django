@@ -2,7 +2,7 @@
 {% block title %}{{ recipe.title }}{% endblock %}
 {% block content %}
 <h1>{{ recipe.title }}</h1>
-<p><strong>Chef:</strong> {{ recipe.chef.name if recipe.chef else "—" }}</p>
+<p><strong>Chef:</strong> {{ recipe.chef.name }}</p>
 <p><strong>Cook time:</strong> {{ recipe.cook_time_minutes }} minutes</p>
 <p><strong>Difficulty:</strong> {{ recipe.get_difficulty_display }}</p>
 
