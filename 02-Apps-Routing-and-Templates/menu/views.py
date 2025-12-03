@@ -18,7 +18,8 @@ def about(request):
 def menu_page(request):
     menu_items = [
         {'category': 'Coding Coffee', 'name': 'Espresso', 'price': 3.50},
-        {'category': 'Coding Coffee', 'name': 'Macchiato', 'price': 4.75},
+        {'category': 'Coding Coffee', 'name': 'Macchiato', 'price': 4.75}, 
+        {'category': 'Coding Coffee', 'name': 'Flat White', 'price': 5.25}, 
         {'category': 'Technical Tea', 'name': 'Green Tea', 'price': 3.25},
         {'category': 'Technical Tea', 'name': 'Chai Latte', 'price': 3.75},
         {'category': 'Programming Pastries', 'name': 'Croissant', 'price': 4.95},
