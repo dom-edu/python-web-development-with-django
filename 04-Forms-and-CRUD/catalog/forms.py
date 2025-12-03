@@ -36,7 +36,8 @@ class PublisherForm(forms.ModelForm):
         model = Publisher
         fields = ["name", "city", "country"]
         widgets = {
-            "name": forms.TextInput(attrs={"class": "form-control"}),
+            # class: form-control is an injected boostrap class 
+            "name": forms.TextInput(attrs={"class": "form-control"}), 
             "city": forms.TextInput(attrs={"class": "form-control"}),
             "country": forms.TextInput(attrs={"class": "form-control"}),
         }

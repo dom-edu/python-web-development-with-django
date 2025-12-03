@@ -10,10 +10,10 @@ def home(request):
     return render(request, 'catalog/home.html', context)
 
 def book_list(request):
-    books = Book.objects.select_related('author').prefetch_related('genre').all()
+    books = Book.objects.select_related('author').prefetch_related('genre').all() # if you are using foreign keys will speed this up a bit 
     return render(request, 'catalog/book_list.html', {'books': books})
 
 def readings_list(request):
     readings = Reading.objects.all()
-    
+
     return render(request, 'catalog/readings_list.html', {'readings': readings})

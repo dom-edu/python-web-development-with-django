@@ -99,7 +99,7 @@ def add_author(request):
         if form.is_valid():
             new_author = form.save()
             messages.success(request, f'Author "{new_author}" created successfully!')
-            return redirect("book_list")
+            return redirect("author_list")
     else:
         form = AuthorForm()
     return render(request, "catalog/author/add_author.html", {"form": form})

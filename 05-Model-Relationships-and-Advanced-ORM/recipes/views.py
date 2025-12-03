@@ -13,21 +13,22 @@ def recipe_list(request):
     ingredient = request.GET.get("ingredient")
     chef = request.GET.get("chef")
     q = request.GET.get("q")
-
+    
+    # the if blocks not being if,elif allow multiple ifs to be true , which allows for multi criteria searcgub
     if tag:
-        qs = qs.filter(tags__name__iexact=tag)
+        qs = qs.filter(tags__name__iexact=tag) # look in tags and match case insensitive
     if ingredient:
-        qs = qs.filter(ingredients__name__iexact=ingredient)
+        qs = qs.filter(ingredients__name__iexact=ingredient) # look in ingredients and match case insensitive
     if chef:
-        qs = qs.filter(chef__name__icontains=chef)
+        qs = qs.filter(chef__name__icontains=chef) # # look in chef and match case insensitive
     if q:
-        qs = qs.filter(title__icontains=q)
+        qs = qs.filter(title__icontains=q)  # match anything you can in the title 
 
     # Distinct because of JOINs.
-    qs = qs.distinct()
+    qs = qs.distinct() # merge overlapping results into distinct hits 
 
     # Basic pagination.
-    paginator = Paginator(qs, 8)
+    paginator = Paginator(qs, 8) # 8 pages at a time 
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
