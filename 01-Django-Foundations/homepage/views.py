@@ -34,4 +34,12 @@ def projects(request):
         'page_title': 'Projects',
         'projects': projects_data
     }
+
     return render(request, 'homepage/projects.html', context)
+
+def tasks(request):
+    context = {
+        'page_title': 'Tasks',
+        'tasks': ['make dinner','clean apartment', 'laundry']
+    }
+    return render(request, 'homepage/tasks.html', context)

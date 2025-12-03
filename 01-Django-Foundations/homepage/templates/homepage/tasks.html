@@ -1,0 +1,14 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+<h1>{{ page_title }}</h1>
+<ul>
+    {% for tsk in tasks %}
+        <li>
+            <strong>{{tsk}}</strong> 
+        </li>
+    {% empty %}
+        <li>No projects yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
