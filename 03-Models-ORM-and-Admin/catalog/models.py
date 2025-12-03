@@ -1,14 +1,26 @@
 from django.db import models
 
 # Create your models here.
+# each represent a table in the database 
+# mapping classes onto db tables is what is meant by ORM 
+# Object Relational Mapping 
+
+# way better than writing some SQL which would be 
+# CREATE TABLE Genre(VarChar(100))
 class Genre(models.Model):
     """ Model representing a book's genre. (EX: fiction, sci-fi.) """
     name = models.CharField(max_length=100, unique=True)
 
+
+    "Model metadata is “anything that’s not a field”, such as ordering options (ordering), database table name (db_table), or human-readable singular and plural names (verbose_name and verbose_name_plural). None are required, and adding class Meta to a model is completely optional."
     class Meta:
+
+        # this orders the table lexicographically on the DB Side
         ordering = ["name"]
 
     def __str__(self):
+        # string reprensentation of the object 
+        # every object in python has __str__
         return self.name
     
 class Author(models.Model):
