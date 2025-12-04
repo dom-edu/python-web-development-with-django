@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add a new trip</h2>
+  <!-- enctype multipart is required for image uploads -->
+   <!-- method is a post -->
+  <form method="post" action="{% url 'trip_create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

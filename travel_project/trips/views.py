@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Trip
+from .forms import TripForm 
 
 # Create your views here.
 
@@ -17,4 +18,17 @@ def trip_list(request):
 
 
 def trip_create(request):
-    pass
+
+    context = {}
+
+    if request.method == 'POST':
+        form = TripForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('trip_list')
+        else:
+            print("trip craete: form INVALID", form.errors)
+    else:
+        form = TripForm()
+        context = {'form': form}
+    return render(request, "trip_form.html", context)
