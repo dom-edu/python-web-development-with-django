@@ -1,4 +1,4 @@
-{% extends 'trips/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
   {% if trips %}
@@ -7,5 +7,5 @@
     {% endfor %}
   {% else %}  
   <p> No Trips yet! 
-  {% end if %}
+  {% endif %}
 {% endblock %}

@@ -13,7 +13,7 @@ def trip_list(request):
     trips = Trip.objects.all()
     # get pass in results for html rendering
     context = {'trips': trips}
-    return render(request, 'trips/trip_list.html', context)
+    return render(request, 'trip_list.html', context)
 
 
 def trip_create(request):
