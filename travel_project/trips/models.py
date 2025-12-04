@@ -29,6 +29,6 @@ class Trip(models.Model):
         ordering = ['-start_date', 'title']
 
     def __str__(self):
-        return f"{self.title} - {self.location}"
+        return f"{self.title} - {self.destination}"
     
 
