@@ -16,7 +16,7 @@ class Trip(models.Model):
     end_date = models.DateField()
 
     #
-    image = models.ImageField(upload_to='destinations/')
+    image = models.ImageField()
     # auto generated 
     created_at = models.DateTimeField(auto_now_add=True)
 
