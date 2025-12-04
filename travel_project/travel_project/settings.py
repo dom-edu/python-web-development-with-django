@@ -116,7 +116,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# RELATIVE PATH
 STATIC_URL = 'static/'
+
+# set up media folder for images 
+MEDIA_URL  = '/media/'
+
+# this syntax is what's called posix syntax that you have using Path
+MEDIA_ROOT = BASE_DIR / MEDIA_URL
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

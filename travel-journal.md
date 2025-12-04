@@ -18,8 +18,6 @@ python manage.py startapp trips
 pip install Pillow
 ```
 
-## First step: Add trips app to installed apps 
-
 
 
 
