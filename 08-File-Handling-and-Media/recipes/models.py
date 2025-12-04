@@ -76,20 +76,26 @@ class Recipe(models.Model):
     
     def get_absolute_url(self):
         return reverse("recipe_detail", args=[str(self.id)])
-    
+
+# we've created our own model for uploading he files 
 class RecipeImage(models.Model):
     recipe = models.ForeignKey("Recipe", on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(
         upload_to="recipes/gallery",
         validators=[FileExtensionValidator(allowed_extensions=["jpg", "jpeg", "png"])]
     )
+
+    # timestamp will auto generate 
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    # str rep is the reciple title 
     def __str__(self):
         return f"Image for {self.recipe.title}"
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+
+        # this is where we can use pillow to resize the image 
         img_path = self.image.path
         img = Image.open(img_path)
         max_size = (800, 800)

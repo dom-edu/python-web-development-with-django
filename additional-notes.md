@@ -83,4 +83,12 @@ pwd
 i.e /Users/n/Documents/GitHub/python-web-development-with-django/03-Models-ORM-and-Admin
 ```
 
+## create a script to run common start-up commands 
+```
+touch start-env.sh
+```
 
+## installing pillow via pip for image processing 
+```
+pip install pillow
+```
