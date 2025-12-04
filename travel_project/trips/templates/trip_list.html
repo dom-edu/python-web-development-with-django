@@ -1,0 +1,11 @@
+{% extends 'trips/base.html' %}
+
+{% block content %}
+  {% if trips %}
+    {% for trip in trips %}
+        <h2>{{ trip.title}}</h2>
+    {% endfor %}
+  {% else %}  
+  <p> No Trips yet! 
+  {% end if %}
+{% endblock %}
