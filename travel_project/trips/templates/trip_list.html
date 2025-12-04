@@ -4,6 +4,7 @@
   {% if trips %}
     {% for trip in trips %}
         <h2>{{ trip.title}}</h2>
+        <h3>{{trip.start_date}} - {{trip.end_date}}</h3>
         </br>
         <img src="{{ trip.image.url }}" alt="{{trip.title}}" > 
     {% endfor %}
